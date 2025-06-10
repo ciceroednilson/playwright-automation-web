@@ -64,7 +64,7 @@ npx playwright test --ui
 https://playwright.dev/docs/codegen-intro
 
 > [!TIP]
-> Using the sample server http of the python.
+> Running a simple HTTP server with Python.
 >```shell
 >python3 -m http.server 8000
 >```
