@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Login Page -->
+        <section id="login-page" class="page">
+            <h2>Sign in</h2>
+            <form id="login-form">
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="login-user" style="width: 120px; text-align: left;">User:</label>
+                    <input type="text" id="login-user" name="user" required>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="login-password" style="width: 120px; text-align: left;">Password:</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%;">
+                    <button type="submit">Access</button>
+                    <button id="to-register">Register</button>
+                </div>
+            </form>
+        </section>
+        <!-- Register Page -->
+        <section id="register-page" class="page" style="display:none;">
+            <h2>Register Person</h2>
+            <form id="register-form">
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="first-name" style="width: 120px; text-align: left;">First Name:</label>
+                    <input type="text" id="first-name" name="firstName" required style="width: 300px;">
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="middle-name" style="width: 120px; text-align: left;">Middle Name:</label>
+                    <input type="text" id="middle-name" name="middleName" style="width: 300px;">
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="last-name" style="width: 120px; text-align: left;">Last Name:</label>
+                    <input type="text" id="last-name" name="lastName" required style="width: 300px;">
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="marital-status" style="width: 120px; text-align: left;">Marital Status:</label>
+                    <select id="marital-status" name="maritalStatus" required style="width: 300px;">
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="widowed">Widowed</option>
+                    </select>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="document-number" style="width: 120px; text-align: left;">Document Number:</label>
+                    <input type="text" id="document-number" name="documentNumber" required style="width: 300px;">
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="address" style="width: 120px; text-align: left;">Address:</label>
+                    <input type="text" id="address" name="address" required style="width: 300px;">
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="active" style="width: 120px; text-align: left;">Active:</label>
+                    <input type="checkbox" id="active" name="active">
+                </div>
+                
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="communication" style="width: 120px; text-align: left;">Communication:</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="email" style="width: 120px; text-align: left;">Email:</label>
+                    <input type="radio" id="email" name="communication" value="email">
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                    <label for="sms" style="width: 120px; text-align: left;">SMS:</label>
+                    <input type="radio" id="sms" name="communication" value="sms">
+                </div>
+                <div style="display: flex; justify-content: space-between; width: 100%;">
+                    <button type="submit">Register</button>
+                    <button id="to-search">Go to Search</button>
+                    <button id="to-login">Back to Login</button>
+                </div>
+            </form>
+        </section>
+        <!-- Search Page -->
+        <section id="search-page" class="page" style="display:none;">
+            <h2>Search People</h2>
+            <table id="people-table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Marital Status</th>
+                        <th>Document Number</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be filled by JS -->
+                </tbody>
+            </table>
+            <button id="to-register-from-search">Register New Person</button>
+            <button id="to-login-from-search">Back to Login</button>
+        </section>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
