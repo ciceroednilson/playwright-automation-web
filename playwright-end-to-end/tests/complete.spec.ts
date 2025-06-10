@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('test complete flow', async ({ page }) => {
+  await page.goto('http://127.0.0.1:8000/index.html');
+  await page.getByRole('textbox', { name: 'User:' }).click();
+  await page.getByRole('textbox', { name: 'User:' }).click();
+  await page.getByRole('textbox', { name: 'User:' }).fill('Cicero');
+  await page.getByRole('textbox', { name: 'User:' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Password:' }).fill('123455');
+  await page.getByRole('button', { name: 'Access' }).click();
+  await page.getByRole('button', { name: 'Register New Person' }).click();
+  await page.getByRole('textbox', { name: 'First Name:' }).click();
+  await page.getByRole('textbox', { name: 'First Name:' }).fill('Santos');
+  await page.getByRole('textbox', { name: 'First Name:' }).press('Tab');
+  await page.getByRole('textbox', { name: 'Middle Name:' }).click();
+  await page.getByRole('textbox', { name: 'Middle Name:' }).fill('Oliveira');
+  await page.getByRole('textbox', { name: 'Last Name:' }).click();
+  await page.getByRole('textbox', { name: 'Last Name:' }).fill('Machado');
+  await page.getByRole('textbox', { name: 'Document Number:' }).click();
+  await page.getByRole('textbox', { name: 'Document Number:' }).fill('12123');
+  await page.getByRole('textbox', { name: 'Address:' }).click();
+  await page.getByRole('textbox', { name: 'Address:' }).fill('Center');
+  await page.locator('#register-form div').filter({ hasText: 'Active:' }).click();
+  await page.getByRole('radio', { name: 'Email:' }).check();
+  await page.getByRole('button', { name: 'Register' }).click();
+  await page.getByRole('button', { name: 'Back to Login' }).click();
+  await page.getByRole('textbox', { name: 'User:' }).dblclick();
+  await page.getByRole('textbox', { name: 'User:' }).fill('Santos');
+  await page.getByRole('button', { name: 'Access' }).click();
+});
